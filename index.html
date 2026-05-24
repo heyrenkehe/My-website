@@ -554,6 +554,65 @@
       .about-stats { grid-template-columns: 1fr; }
       .hero-title { font-size: 2.5rem; }
     }
+
+    .timeline {
+  max-width: 700px;
+  border-left: 2px solid var(--border);
+  padding-left: 3rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -3rem;
+  top: 0.3rem;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translateX(-4px);
+}
+
+.timeline-year {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.quote-section {
+  text-align: center;
+  padding: 6rem 3rem;
+}
+
+.quote-text {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 300;
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
   </style>
 </head>
 <body>
@@ -564,8 +623,11 @@
   <img src="tx.jpg" alt="Logo" height="36">
 </div>
     <ul class="nav-links">
-      <!-- <li><a href="#about">关于我</a></li> -->
-      <li><a href="#contact">联系我</a></li>
+      <li><a href="#about">关于</a></li>
+      <li><a href="#contact">联系</a></li>
+      <li><a href="#skills">技能</a></li>
+      <li><a href="#timeline">经历</a></li>
+      <li><a href="#works">作品</a></li>
     </ul>
   </nav>
 
@@ -584,9 +646,9 @@
   </section>
 
   <!-- ABOUT -->
-  <!-- <section id="about">
+  <section id="about">
     <div class="reveal">
-      <p class="section-label">01 &mdash; 关于我</p>
+      <p class="section-label">01 &mdash; 关于</p>
       <h2 class="section-title">在代码与崩溃之间<br>寻找平衡</h2>
     </div>
     <div class="about-grid reveal">
@@ -620,7 +682,7 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section> 
   <!-- CONTACT -->
   <section id="contact">
     <div class="reveal">
@@ -646,6 +708,96 @@
       </div>
     </div>
   </section>
+  <!-- SKILLS -->
+<section id="skills">
+  <div class="reveal">
+    <p class="section-label">03 &mdash; 技能</p>
+    <h2 class="section-title">我会的 &amp; 正在学的</h2>
+  </div>
+  <div class="skills-container reveal">
+    <div class="skill-card">
+      <span class="skill-icon">◆</span>
+      <div class="skill-name">C++</div>
+      <div class="skill-desc">主要的 OI 语言，熟悉 STL、算法与数据结构。</div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">◇</span>
+      <div class="skill-name">HTML / CSS</div>
+      <div class="skill-desc">能独立搭建静态网页，正在学习响应式设计。</div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">△</span>
+      <div class="skill-name">Git &amp; GitHub</div>
+      <div class="skill-desc">版本管理基础操作，用 GitHub Pages 部署网站。</div>
+    </div>
+  </div>
+</section>
+
+  <!-- TIMELINE -->
+<section id="timeline">
+  <div class="reveal">
+    <p class="section-label">04 &mdash; 经历</p>
+    <h2 class="section-title">我的历程</h2>
+  </div>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <span class="timeline-year">2024</span>
+      <div class="timeline-content">
+        <h3>开始学习 OI</h3>
+        <p>踏入信息学竞赛的大门，学习 C++ 与算法基础。</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-year">2025</span>
+      <div class="timeline-content">
+        <h3>搭建个人网站</h3>
+        <p>用 HTML/CSS 构建了这个个人主页，记录成长。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- WORKS -->
+<section id="works">
+  <div class="reveal">
+    <p class="section-label">05 &mdash; 作品</p>
+    <h2 class="section-title">我的作品 &amp; 题解</h2>
+  </div>
+  <div class="projects-list reveal">
+    <a href="#" class="project-item">
+      <span class="project-year">2026/5</span>
+      <div class="project-info">
+        <h3>个人主页</h3>
+        <p>用纯 HTML/CSS/JS 搭建的个人网站，部署在 GitHub Pages。</p>
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">HTML</span>
+        <span class="project-tag">CSS</span>
+      </div>
+      <span class="project-arrow">→</span>
+    </a>
+    <!-- <a href="#" class="project-item">
+      <span class="project-year">2025</span>
+      <div class="project-info">
+        <h3>洛谷 P1001 题解</h3>
+        <p>A+B Problem 的多种解法与思路分析。</p>
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">C++</span>
+        <span class="project-tag">OI</span>
+      </div>
+      <span class="project-arrow">→</span>
+    </a> -->
+  </div>
+</section>
+<!-- QUOTE -->
+<!-- <section class="quote-section">
+  <div class="reveal">
+    <p class="quote-text">
+      「代码是写给人看的，顺便让机器执行。」
+    </p>
+  </div>
+</section> -->
 
   <!-- FOOTER -->
   <footer>
